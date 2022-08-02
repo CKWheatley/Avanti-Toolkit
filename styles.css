@@ -143,13 +143,34 @@ body main div input:first-of-type {
   margin: 0 15px 0 0;
 }
 
-body main div textarea {
+body main div .gen-template {
+  border: 1px black solid;
+  background-color: white;
   width: 100%;
   font-size: 1em;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   min-height: 5em;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+body main div .gen-template:first-of-type {
+  min-height: 1em;
+}
+
+body main div .gen-template:nth-of-type(2n) {
+  min-height: 2em;
+}
+
+body main div textarea {
+  width: 100%;
+  font-size: 1em;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  min-height: 2em;
   resize: vertical;
   max-width: 100%;
   min-width: 100%;

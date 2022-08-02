@@ -22,8 +22,8 @@
 			<input type="text" list="selection" placeholder="Selection" id="selector_input">
 			<datalist name="selection" id="selection">
 				<option name="" id="s_1"></option>
-				<option name="" id="s_2">Order LPG</option>
-				<option name="" id="s_3">Countersigning</option>
+				<option name="" id="s_2">PREMIER Order LPG</option>
+				<option name="" id="s_3">PREMIER Countersigning</option>
 				<!--<option name="" id="s_4">Surcharge</option>   -->
 				<!--<option name="" id="s_5">New Tank Install</option>   -->
 				<!--<option name="" id="s_6">Send Agreement</option>   -->
@@ -53,11 +53,16 @@
 			<input type="number" id="gbs-no" placeholder="GBS Acc #">
 		</div>
 		<div id="mail">
-			<textarea name="mail-recipient" id="mail-recipient" placeholder="Recipient"></textarea>
-			<textarea name="mail-subject" id="mail-subject" placeholder="Subject"></textarea>
+			<div name="mail-recipient" id="mail-recipient" class="gen-template">Recipient</div>
+			<div name="mail-subject" id="mail-subject" class="gen-template">Subject</div>
 			<textarea name="mail-intro" id="mail-intro" placeholder="Intro"></textarea>
-			<textarea name="mail-body" id="mail-body" placeholder="Description"></textarea>
+			<div name="mail-body" id="mail-body" class="gen-template">Body</div>
 			<textarea name="mail-outro" id="mail-outro" placeholder="Outro"></textarea>
+			<div>
+				<button>Copy Recipient</button>
+				<button>Copy Subject</button>
+				<button>Copy Body</button>
+			</div>
 		</div>
 		<div id="tick-boxes">
 			<span class="tickbox" id="tb1" true>

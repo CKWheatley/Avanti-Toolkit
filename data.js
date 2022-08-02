@@ -11,15 +11,15 @@ var gbs_no = $("#gbs-no");
 var input = $("input")
 var s_input = $("#selector_input")
 let selectable = [$("#s_1"),$("#s_2"),$("#s_3"),$("#s_4"),$("#s_5"),$("#s_6"),$("#s_7"),$("#s_8"),$("#s_9"),$("#s_10"),$("#s_11"),$("#s_12"),$("#s_13"),$("#s_14"),$("#s_15"),$("#s_16"),$("#s_17"),]
-var tick_box = [$("#tb1"),$("#tb2"),$("#tb3"),$("#tb4"),$("#tb5"),$("#tb6"),$("#tb7"),$("#tb8"),$("#tb9"),$("#tb10"),$("#tb11"),$("#tb12"),$("#tb13"),$("#tb14"),$("#tb15")]
-var value_box = [$("#vb1"),$("#vb2"),$("#vb3"),$("#vb4"),$("#vb5"),$("#vb6"),$("#vb7"),$("#vb8"),$("#vb9"),$("#vb10"),$("#vb11"),$("#vb12"),$("#vb13"),$("#vb14"),$("#vb15")]
+var tk_bx = [$("#tb1"),$("#tb2"),$("#tb3"),$("#tb4"),$("#tb5"),$("#tb6"),$("#tb7"),$("#tb8"),$("#tb9"),$("#tb10"),$("#tb11"),$("#tb12"),$("#tb13"),$("#tb14"),$("#tb15")]
+var v_bx = [$("#vb1"),$("#vb2"),$("#vb3"),$("#vb4"),$("#vb5"),$("#vb6"),$("#vb7"),$("#vb8"),$("#vb9"),$("#vb10"),$("#vb11"),$("#vb12"),$("#vb13"),$("#vb14"),$("#vb15")]
 
 
-//var recipient =
-//var subject = 
-//var intro = 
+var recipient = $("#mail-recipient")
+var subject = $("#mail-subject")
+var intro = $("#mail-intro")
 var body = $("#mail-body")
-//var outro = 
+var outro = $("#mail-outro")
 
 
 
@@ -39,43 +39,50 @@ data_empty()
 function chnge_h4(value, value2){
     value.find("h4").html(`${value2}`)
 }
+function box_input(value){
+    value.find("input").val()
+}
+
 function cl_tv_vals(){
     function h4(value){
         value.find("h4").html("")
     }
     for(i = 0; i < 15; i++){
-        h4(tick_box[i])
-        h4(value_box[i])
+        h4(tk_bx[i])
+        h4(v_bx[i])
     }
 }
-
 
 function custom(){
     cl_tv_vals()
 }
 function order_lpg(){
     cl_tv_vals()
+    subject.html(`Account: ${act_no.val()}|Premier LPG Order Request`)
     if(snd_to.val() == "Customer"){
-        chnge_h4(value_box[0], "Gauge Reading (%)")
-        if(value_box[0].val().length > 0){
-            console.log("something in there")
-            if(value_box[0].val() <= 10){
-                console.log("smaller or equal to 10%")
+        chnge_h4(v_bx[0], "Gauge Reading (%)")
+        if(v_bx[0].find("input").val().length > 0){
+            if(v_bx[0].find("input").val() <= 10){
+                body.html(`
+I have forwarded your request to our scheduling department who will arrange the delivery for you and noted the urgency.
+
+I know that our distribution team will make every effort to get a delivery to you as soon as possible. 
+<br><br>
+I understand it is easy to overlook gauge readings however we do ask that in future to avoid a run out that you try to order when the gauge reads between 20 - 30 %. `)
             }else{
-                console.log("larger than 10%")
+                body.html(`
+I have forwarded your request to our distribution team who will arrange the delivery for you. We do advise to expect a lead time of 7-10 working days.`)
             }
         }else{
-            body.html(`Thank you for contacting Premier LPG.  
-
-Please forward me your current gauge reading so that I can proceed with your order.`)
+            body.html(`Please forward me your current gauge reading so that I can proceed with your order.`)
         }
 
 
 
     }else if(snd_to.val() == "Department"){
-        chnge_h4(value_box[0], "Gauge Reading (%)")
-        chnge_h4(value_box[1], "Company")
-        chnge_h4(value_box[2], "Amount requested (L)")
+        chnge_h4(v_bx[0], "Gauge Reading (%)")
+        chnge_h4(v_bx[1], "Company")
+        chnge_h4(v_bx[2], "Amount requested (L)")
     }
 }
 //function countersigning(){
@@ -100,7 +107,6 @@ function selected(){
 }
 input.change(() => {
     selected()
-    console.log("input changed")
     // use s_input change or snd_input if this breaks
 });
 

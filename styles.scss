@@ -62,11 +62,27 @@ body{
                     margin: 0 15px 0 0;
                 }
             }
-            textarea{
+            .gen-template{
+                border: 1px black solid;
+                background-color: white;
                 width: 100%;
                 font-size: 1em;
                 height: max-content;
                 min-height: 5em;
+                max-width: 100%;
+                min-width: 100%;
+                &:first-of-type{
+                    min-height: 1em;
+                }
+                &:nth-of-type(2n){
+                    min-height: 2em;
+                }
+            }
+            textarea{
+                width: 100%;
+                font-size: 1em;
+                height: max-content;
+                min-height: 2em;
                 resize: vertical;
                 max-width: 100%;
                 min-width: 100%;

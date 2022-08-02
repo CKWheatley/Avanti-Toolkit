@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Avanti Internal Support Tool</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+<link href="shortcuts.css" rel="stylesheet" type="text/css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>Avanti Internal Support Tool</h1>
+	</header>
+	<main>
+		<aside>
+			<img>
+		</aside>
+		<div id="top-bar">
+			<input type="text" list="selection" placeholder="Selection" id="selector_input">
+			<datalist name="selection" id="selection">
+				<option name="" id="s_1"></option>
+				<option name="" id="s_2">Order LPG</option>
+				<option name="" id="s_3">Countersigning</option>
+				<!--<option name="" id="s_4">Surcharge</option>   -->
+				<!--<option name="" id="s_5">New Tank Install</option>   -->
+				<!--<option name="" id="s_6">Send Agreement</option>   -->
+				<!--<option name="" id="s_7">Site survey</option>   -->
+				<!--<option name="" id="s_8">Customer Switch Out</option>   -->
+				<!--<option name="" id="s_9">Customer Switch In</option>   -->
+				<!--<option name="" id="s_10">Contract Cancellation</option>   -->
+				<!--<option name="" id="s_11">Tank Uplift</option>   -->
+				<!--<option name="" id="s_12">Tank Relocation</option>   -->
+				<!--<option name="" id="s_13">Quote</option>   -->
+				<!--<option name="" id="s_14">Complaint</option>   -->
+				<!--<option name="" id="s_15">Site Safety</option>   -->
+				<!--<option name="" id="s_16">Red List</option>   -->
+				<!--<option name="" id="s_17">Change of details</option>   -->
+				<!--<option name="" id="s_18">Engineering</option>   -->
+				<!--<option name="" id="s_19">CRM</option>   -->
+			</datalist>
+
+			<input type="text" list="recip-type" id="snd-to" placeholder="Send To">
+			<datalist name="recip-type" id="recip-type">
+				<option name="" id="cus">Customer</option>
+				<option name="" id="dep">Department</option>
+			</datalist>
+
+			<input type="text" id="name" placeholder="Customer Name">
+			<input type="number" id="act-no" placeholder="Act Acc #">
+			<input type="number" id="gbs-no" placeholder="GBS Acc #">
+		</div>
+		<div id="mail">
+			<textarea name="mail-recipient" id="mail-recipient" placeholder="Recipient"></textarea>
+			<textarea name="mail-subject" id="mail-subject" placeholder="Subject"></textarea>
+			<textarea name="mail-intro" id="mail-intro" placeholder="Intro"></textarea>
+			<textarea name="mail-body" id="mail-body" placeholder="Description"></textarea>
+			<textarea name="mail-outro" id="mail-outro" placeholder="Outro"></textarea>
+		</div>
+		<div id="tick-boxes">
+			<span class="tickbox" id="tb1" true>
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb2">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb3">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb4">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb5">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb6">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb7">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb8">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb9">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb10">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb11">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb12">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb13">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb14">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+			<span class="tickbox" id="tb15">
+				<h4></h4>
+				<input type="checkbox">
+			</span>
+		</div>
+		<div id="value-boxes">
+			<datalist name="" id="v_box_dl">
+				<!-- Set each option in here in accordance to what is selected -->
+			</datalist>
+			<span class="valuebox" id="vb1">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb2">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb3">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb4">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb5">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb6">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb7">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb8">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb9">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb10">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb11">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb12">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb13">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb14">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+			<span class="valuebox" id="vb15">
+				<h4></h4>
+				<input type="text" list="list of datalist to pick">
+			</span>
+		</div>
+	</main>
+	<footer>
+		<div>
+			<h2>Notes</h2>
+			<textarea name="" id="" rows="1"></textarea>
+			<!-- Add an add icon that will add a new note everytime its clicked and a delete icon for after-->
+		</div>
+		<div>
+			<h2>Call List</h2>
+			<table>
+
+			</table>
+			<!-- Add the stuff needed and a call back timer with an alert-->
+		</div>
+	</footer>
+</body>
+<script src="functions.js"></script>
+<script src="data.js"></script>
+</html>
